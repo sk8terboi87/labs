@@ -5,8 +5,14 @@ Sockets using 'http://socketo.me/'
 
 Installation
 -------------
-`$ php composer.phar install`
 
+## For Push
+
+$ sudo apt-get install libzmq-dev
+$ sudo pecl install channel://pecl.php.net/zmq-1.1.2
+- Update `php.ini` file with `extension=zmq.so`
+
+`$ php composer.phar install`
 
 Example: 1 - CLI
 ----------------

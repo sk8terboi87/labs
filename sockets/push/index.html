@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script type="text/javascript" src='minified-src.js'></script>
+    <title>Push Message</title>
+    <script>
+        var MINI = require('minified');
+        var $=MINI.$;
+        $.ready(function() {
+            $('#js-send').on('click', function() {
+                messageObj = $('#message').values();
+                console.log('clicked', messageObj.message);
+                if(messageObj.message != null) {
+                    $.request(
+                        'post',
+                        'http://192.168.0.4/sockets/push/process.php', {
+                            input: messageObj.message
+                        })
+                    .then(function(txt) {
+                        console.log('1 ', txt);
+                    })
+                    .error(function(status, statusText, responseText) {
+                        console.log('2 ', status, statusText, responseText);
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    Type Something:  <br/>
+    <textarea name='message' id='message'></textarea> <br/>
+    <input type='submit' id='js-send' name='send' value='send'>
+</body>
+</html>
