@@ -1,0 +1,28 @@
+<!-- <script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+<script>
+    console.log('loaded');
+
+    var connection = new autobahn.Connection({
+       url: 'ws://localhost:8080',
+       realm: 'realm1'}
+    );
+
+    connection.open();
+</script>
+ -->
+<script src='$ws.js'></script>
+<script type="text/javascript">
+    $ws('ws://localhost:8080').ready(function($ws, ws){
+        // console.log('here', ws);
+
+        // $ws.send('tonight at 9...')
+        //     .send({msg: 'tonight at 9...'})
+        //     // .emit('news', {message: 'WARNING! Flash-flood!'})
+        //     .emit('kitty', 'TORNADOW WARNING!');
+
+        // $ws.on('kitty', function(data){
+        //   console.log('KITTEN NEWS!', data, typeof data);
+        // });
+    });
+
+</script>

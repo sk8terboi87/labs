@@ -1,12 +1,12 @@
 <?php
 require 'vendor/autoload.php';
-require 'chat.php';
+require 'CustomTransporter.php';
 
 use Ratchet\Server\IoServer;
 
 
     $server = IoServer::factory(
-        new Chat(),
+        new CustomTransporter(),
         8080
     );
 

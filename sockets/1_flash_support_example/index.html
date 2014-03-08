@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Labs - Sockets</title>
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="swfobject.js"></script>
+    <script type="text/javascript" src="web_socket.js"></script>
+
+    <!-- Our Client Socket Thingy -->
+    <script type="text/javascript" src="clientSocket.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      /* Move down content because we have a fixed navbar that is 50px tall */
+      body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body onload = "init()">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Labs - Sockets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <form class='form-horizontal'>
+          <fieldset>
+            <button  class='btn btn-success'  type = "button" onclick = "connect()">
+              connect to server
+            </button>
+            <button  class='btn btn-danger'  type = "button" onclick = "ws.close()">
+              disconnect
+            </button>
+            <br/>
+            <br/>
+            <label for = "txtMessage">
+              <input type = "text" id = "txtMessage" value = "HTML5 Quick Reference For Dummies" />
+            </label>
+            <button class='btn btn-info' type = "button" onclick = "sendMessage()">
+              send message
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12">
+          <div id="output"><span class='label label-primary'>Click 'connect' button to connect</span></div>
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
