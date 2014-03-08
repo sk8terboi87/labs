@@ -1,7 +1,10 @@
 Labs
 ====
 
-Sockets using 'http://socketo.me/'
+Sockets using 'http://socketo.me/' & 'https://github.com/gimite/web-socket-js'
+
+Works in IE 8, 9 and Other Modern Browsers.
+- Tested in IE 9, Pending in IE 8 (I don't have IE 8 currently :( )
 
 Example: 1  (1_flash_support_example)
 ---------------------------------------
@@ -58,7 +61,6 @@ Type something in terminal 2 & 3..... Simple chat!!!
 
 TODO:
 =====
-- To check in Internet Explore 8 and above
 - To Perform database insert and pass message to the subscribers
 - Find out why its not working with http://autobahn.ws/
 - Experimenting the same with **NodeJs**
