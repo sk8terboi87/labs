@@ -1,20 +1,48 @@
-labs
+Labs
 ====
 
 Sockets using 'http://socketo.me/'
 
-Installation
--------------
+Example: 1  (1_flash_support_example)
+---------------------------------------
 
-## For Push
+## Installation
+
+`$ php composer.phar install`
+
+## Starting Server
+
+$ php httpServer.php
+
+- Open '1_flash_support_example'
+-- Connect the server and send some message
+- Open one more 'tab/window' of the same and give connect
+- You can see the socket thingy working awesomely!!
+
+
+Example: 2  (2_push_example)  **TODO**
+---------------------------------------
+
+## Installation
 
 $ sudo apt-get install libzmq-dev
 $ sudo pecl install channel://pecl.php.net/zmq-1.1.2
 - Update `php.ini` file with `extension=zmq.so`
 
+- Update composer.json with below
+
+{
+    "require": {
+        "cboden/Ratchet": "0.3.*",
+        "react/zmq": "0.2.*"
+    }
+}
+
 `$ php composer.phar install`
 
-Example: 1 - CLI
+--TODO--
+
+Example: 3 - CLI
 ----------------
 (terminal 1)
 `$ php server.php`
@@ -28,33 +56,16 @@ Example: 1 - CLI
 Type something in terminal 2 & 3..... Simple chat!!!
 
 
-Example: 2 - WEB
-----------------
-(terminal 1)
-`$ php httpServer.php`
-
-(Browser/Tab 1)
-
-In console
-```
-var conn = new WebSocket('ws://localhost:8080');
-conn.onopen = function(e) {
-    console.log("Connection established!");
-};
-
-conn.onmessage = function(e) {
-    console.log(e.data);
-};
-```
-
-(Browser/Tab 2)
-- Do same as above
-- Then,
-`conn.send('hey there');`
-- Check in tab 1
+TODO:
+=====
+- To check in Internet Explore 8 and above
+- To Perform database insert and pass message to the subscribers
+- Find out why its not working with http://autobahn.ws/
+- Experimenting the same with **NodeJs**
 
 
-Example: 3 - PUSH Based
---------------------------
---TODO--
-
+REFERENCES:
+============
+- http://www.dummies.com/how-to/content/html5-and-web-sockets.html
+- https://github.com/gimite/web-socket-js
+- http://socketo.me/
