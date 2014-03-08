@@ -1,12 +1,18 @@
-/* WARNING - No coding standard followed :D */
+/*
+  WARNING - No coding standard followed :D
+*/
+
 var output;
 var ws;
+WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
+//WEB_SOCKET_DEBUG = true;
+
 function init(){
   output = document.getElementById("output");
-} // end init
+}
+
 function connect(){
   // Let the library know where WebSocketMain.swf is:
-  WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
 
   // Write your code in the same way as for native WebSocket:
   ws = new WebSocket("ws://localhost:8080");
@@ -40,7 +46,6 @@ function sendMessage(){
   //get message from text field
   txtMessage = document.getElementById("txtMessage");
   message = txtMessage.value;
-  //pass message to server
   ws.send(message);
   output.innerHTML += "<p><span class='label label-success'>MESSAGE SENT:</span> " + message + "</p>";
-} // end sendMessage
+}
